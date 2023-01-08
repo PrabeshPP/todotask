@@ -1,0 +1,33 @@
+{%include 'head.html'%}
+<body>
+    <div class="mainLoginContainer">
+        <div class="mainLoginBox">
+            <div class="loginIconBox">Login</div>
+            <form class="formBox" method="post" action="{%url 'login'%}">{%csrf_token%}
+                <div class="emailDiv">
+                    <label>Email</label>
+                    <input type="email" required/>
+                </div>
+                <div class="passwordDiv">
+                    <label>Password</label>
+                    <input type="password" id="password" required />
+                </div>
+                <div class="checkBox">
+                    <input type="checkbox" onclick="passwordToggle()"/>
+                    <h4>Show Password</h4></div>
+                <button class="loginBox" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function passwordToggle(){
+            var pass=document.getElementById('password')
+            if(pass.type=='password'){
+                pass.type='text';
+            }else{
+                pass.type='password'
+            }
+        }
+    </script>
+</body>
+</html>
