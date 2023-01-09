@@ -7,7 +7,7 @@ from .forms import CustomUserForm,TaskForm
 
 @login_required
 def getHome(request):
-    tasks=Task.objects.all()
+    tasks=Task.objects.filter(user=request.user)
     context={
         "tasks":tasks
     }

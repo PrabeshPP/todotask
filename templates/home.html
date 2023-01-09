@@ -10,9 +10,11 @@
                     No Tasks to Show
                 {%else%}
                     {%for task in tasks%}
-                        <div>
-                            <div>
+                        <div class="taskContainer">
+                            <div class="taskTitleDiv">
                                 {{task.title}}
+                            </div>
+                            <div class="taskDescriptionDiv">
                                 {{task.description}}
                             </div>
                         </div>
