@@ -6,11 +6,11 @@
             <form class="formBox" method="post" action="{%url 'login'%}">{%csrf_token%}
                 <div class="emailDiv">
                     <label>Email</label>
-                    <input type="email" required/>
+                    <input name="username" type="email" required/>
                 </div>
                 <div class="passwordDiv">
                     <label>Password</label>
-                    <input type="password" id="password" required />
+                    <input name="password" type="password" id="password" required />
                 </div>
                 {{field.errors}}
                 <div class="checkBox">
