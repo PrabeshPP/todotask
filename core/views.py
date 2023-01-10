@@ -25,6 +25,11 @@ def createTask(request):
                 return redirect('home')
     return render(request,'create-task.html',{"form":form})
 
+@login_required
+def deleteTask(request,id):
+    task=Task.objects.get(id=id)
+    task.delete()
+    return redirect('home')
 
 def signUp(request):
     form=CustomUserForm
