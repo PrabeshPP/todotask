@@ -68,12 +68,24 @@
 }
 
 .taskBox{
-    min-height: 80vh;
+    min-height: 60vh;
     width: 90%;
     margin-bottom: 4vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+
+.userNameBox{
+    height: 10vh;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: sans-serif;
 }
 
 .taskContainer{
@@ -141,5 +153,6 @@
     color: white;
     font-family: sans-serif;
     cursor: pointer;
+    text-decoration: none;
 }
 

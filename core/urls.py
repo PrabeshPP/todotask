@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import getHome,signUp,createTask,deleteTask
+from .views import getHome,signUp,createTask,deleteTask,updateTask
 from django.contrib.auth.views import LoginView,LogoutView
 
 urlpatterns = [
@@ -8,5 +8,6 @@ urlpatterns = [
     path('signup/',signUp,name='register'),
     path('logout/',LogoutView.as_view(),name='Logout'),
     path('add/',createTask,name='add'),
-    path('delete/<str:id>',deleteTask,name="delete-todo")
+    path('delete/<str:id>',deleteTask,name="delete-todo"),
+    path('update/<str:pk>',updateTask,name="update")
 ]

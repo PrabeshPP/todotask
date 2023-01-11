@@ -5,9 +5,12 @@
                 <a href="/add" class="createBox">Create a task</a>
                 <a href="/logout" class="logoutBox">Logout</a>
             </div>
+            <div class="userNameBox">
+                Hii,{{user.name}}
+            </div>
             <div class="taskBox">
                 {%if not tasks%}
-                    No Tasks to Show
+                    No Task to Show
                 {%else%}
                     {%for task in tasks%}
                         <div class="taskContainer">
@@ -19,7 +22,7 @@
                             </div>
                             <div class="buttonUpdateDiv">
                                 <a href="{%url 'delete-todo' task.id %}" class="deleteButton">Delete</a>
-                                <a class="updateButton">Update</a>
+                                <a class="updateButton" href="{%url 'update' task.id%}">Update</a>
                             </div>
                         </div>
                     {%endfor%}

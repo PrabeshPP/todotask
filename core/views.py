@@ -31,6 +31,23 @@ def deleteTask(request,id):
     task.delete()
     return redirect('home')
 
+
+@login_required
+def updateTask(request,pk):
+    context={}
+    task=Task.objects.get(id=pk)
+    form=TaskForm(instance=task)
+    if request.method=="POST":
+        form=TaskForm(request.POST,instance=task)
+        if form.is_valid():
+            obj=form.save(commit=False)
+            obj.user=request.user
+            obj.save()
+            return redirect('home')
+    context['form']=form
+    return render(request,'update.html',context) 
+
+
 def signUp(request):
     form=CustomUserForm
     if request.method=="POST":
